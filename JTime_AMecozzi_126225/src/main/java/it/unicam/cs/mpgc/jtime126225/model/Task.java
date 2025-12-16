@@ -20,6 +20,11 @@ public class Task{
 
     /**
      * Crea una task a partire da determinate informazioni
+     *
+     * @param id l'id della task
+     * @param name il nome della task
+     * @param description la descrizione della task
+     * @param estimatedDuration la durata stimata della task
      */
     public Task(int id, String name, String description, long estimatedDuration){
         this.id = id;
@@ -30,6 +35,29 @@ public class Task{
         this.endTime = null;
         this.estimatedDuration = estimatedDuration;
         this.realDuration = -1;
+    }
+
+    /**
+     * Crea una task tramite tutte le sue informazioni
+     *
+     * @param id l'id della task
+     * @param name il nome della task
+     * @param description la descrizione della task
+     * @param status lo stato della task
+     * @param starTime la data:ora di inizio della task
+     * @param endTime la data:ora di fine della task
+     * @param estimatedDuration la durata stimata della task
+     * @param realDuration la durata effettiva della task
+     */
+    public Task(int id, String name, String description, Status status,LocalDateTime starTime, LocalDateTime endTime, long estimatedDuration, long realDuration){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.status=status;
+        this.startTime = starTime;
+        this.endTime = endTime;
+        this.estimatedDuration = estimatedDuration;
+        this.realDuration =  realDuration;
     }
 
     /// Metodi getter

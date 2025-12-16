@@ -17,7 +17,11 @@ public class Project {
     //private XmlPersistency persistency; // serve per salvare le task
 
     /**
-     * Crea un progetto
+     * Crea un progetto a partire da alcune informazioni
+     *
+     * @param id l'id del progetto
+     * @param name il nome del progetto
+     * @param description la descrizione del progetto
      */
     public Project(int id, String name, String description) {
         this.id = id;
@@ -25,6 +29,23 @@ public class Project {
         this.description = description;
         this.status=Status.IN_PROGRESS;
         this.tasks=new ArrayList<Task>();
+    }
+
+    /**
+     * Crea un progetto tramite tutte le sue informazioni
+     *
+     * @param id l'id del progetto
+     * @param name il nome del progetto
+     * @param description la descrizione del progetto
+     * @param status lo stato del progetto
+     * @param tasks la lista di task contenute nel progetto
+     */
+    public Project(int id, String name, String description, Status status, ArrayList<Task> tasks) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.status=status;
+        this.tasks=tasks;
     }
 
     /// Metodi getter

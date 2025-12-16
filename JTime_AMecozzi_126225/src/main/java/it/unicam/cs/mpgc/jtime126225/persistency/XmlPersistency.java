@@ -11,6 +11,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -101,8 +102,61 @@ public class XmlPersistency implements Persistency {
 
     @Override
     public ArrayList<Project> load() {
+        ArrayList<Project> projects=new ArrayList<Project>();
+
+        try{
+            File file=new File(xmlFile);
+            if(!file.exists()){
+                return projects;
+            }
+
+            DocumentBuilder builder=DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc=builder.parse(file);
+
+            NodeList projectNodes=doc.getElementsByTagName("project");
+
+            for(int i=0;i<projectNodes.getLength();i++){
+                Element projectEl=(Element)projectNodes.item(i);
+
+                int id=Integer.parseInt(projectEl.getElementsByTagName("id").item(0).getTextContent());
+                String name=projectEl.getElementsByTagName("name").item(0).getTextContent();
+                String description=projectEl.getElementsByTagName("description").item(0).getTextContent();
+                Status status=Status.valueOf(projectEl.getElementsByTagName("status").item(0).getTextContent());
+
+                ArrayList<Task> taskList=new ArrayList<Task>();
+
+                Element tasksEl=(Element)projectEl.getElementsByTagName("tasks").item(0);
+                NodeList taskNodes=tasksEl.getChildNodes();
+
+                for(int j=0;j<taskNodes.getLength();j++){
+                    if(taskNodes.item(j) instanceof Element taskEl){
+                        Element taskElement=(Element) taskNodes.item(j);
+
+                        int taskId=Integer.parseInt(taskElement.getElementsByTagName("id").item(0).getTextContent());
+                        String taskName=taskElement.getElementsByTagName("name").item(0).getTextContent();
+                        String taskDesc=taskElement.getElementsByTagName("description").item(0).getTextContent();
+                        Status taskStatus=Status.valueOf(taskElement.getElementsByTagName("status").item(0).getTextContent());
+                        LocalDateTime taskStart=LocalDateTime.parse(taskElement.getElementsByTagName("startTime").item(0).getTextContent());
+
+                        LocalDateTime taskEnd=(taskElement.getElementsByTagName("endTime").item(0).getTextContent().isEmpty())?
+                                null:LocalDateTime.parse(taskElement.getElementsByTagName("endTime").item(0).getTextContent());
+
+                        Long taskEstDur=Long.parseLong(taskElement.getElementsByTagName("estimatedDuration").item(0).getTextContent());
+                        Long taskRealDur=Long.parseLong(taskElement.getElementsByTagName("realDuration").item(0).getTextContent());
+
+                        Task createdTask=new Task(taskId, taskName, taskDesc, taskStatus, taskStart, taskEnd, taskEstDur, taskRealDur);
+                        taskList.add(createdTask);
+                    }
+                }
+
+                Project  project=new Project(id, name, description, status, taskList);
+                projects.add(project);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         //TODO implementare
-        return null;
+        return projects;
     }
 
     /**

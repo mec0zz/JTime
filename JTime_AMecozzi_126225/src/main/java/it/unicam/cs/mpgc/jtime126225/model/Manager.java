@@ -18,8 +18,7 @@ public class Manager {
      */
     private Manager(){
         persistency=new XmlPersistency();
-        //ArrayList<Project> project=persistency.load();
-        this.projects=new ArrayList<Project>();
+        this.projects=persistency.load();
     }
 
     /**
