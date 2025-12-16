@@ -119,13 +119,6 @@ public class Project {
         return true;
     }
 
-    /**
-     * Metodo per calcolare l'hashcode del progetto, utilizzato
-     * per riconoscere i progetti
-     */
-    public int hashCode(){
-        return this.id*this.name.toLowerCase().hashCode()*7;
-    }
 
     /**
      * Restituisce il numero di task completate nel progetto
@@ -174,5 +167,13 @@ public class Project {
             }
         }
         return false;
+    }
+
+    /**
+     * Metodo per calcolare l'hashcode del progetto, utilizzato
+     * per riconoscere i progetti
+     */
+    public int hashCode(){
+        return this.id*this.name.toLowerCase().hashCode()*7;
     }
 }

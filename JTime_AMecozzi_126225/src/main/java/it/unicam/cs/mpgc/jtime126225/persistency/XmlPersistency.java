@@ -257,16 +257,39 @@ public class XmlPersistency implements Persistency {
      */
     public void writeDocument(Document doc){
         try{
+            removeEmptyTextNodes(doc.getDocumentElement());
+
             Transformer transformer= TransformerFactory.newInstance().newTransformer();
 
             transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION,"no");
+            transformer.setOutputProperty(OutputKeys.METHOD,"xml");
 
-            transformer.transform(
-                    new DOMSource(doc),
-                    new StreamResult(new File(this.xmlFile))
-            );
+            doc.getDocumentElement().normalize();
+
+            transformer.transform(new DOMSource(doc), new StreamResult(new File(this.xmlFile)));
         }catch(Exception e){
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Metodo ricorsivo per la formattazione del file XML:
+     * rimuove le righe vuote tra un tag e l'altro
+     *
+     * @param node il nodo da cui rimuovere le righe vuote
+     */
+    private void removeEmptyTextNodes(Node node) {
+        NodeList children = node.getChildNodes();
+        for (int i = children.getLength() - 1; i >= 0; i--) {
+            Node child = children.item(i);
+            if (child.getNodeType() == Node.TEXT_NODE) {
+                if (child.getTextContent().trim().isEmpty()) {
+                    node.removeChild(child);
+                }
+            } else if (child.getNodeType() == Node.ELEMENT_NODE) {
+                removeEmptyTextNodes(child);
+            }
         }
     }
 }

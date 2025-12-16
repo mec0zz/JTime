@@ -1,67 +1,206 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <projects>
-                
-    
-    
-    <project hash="53466">
-                                
-        
-        
-        <id>2</id>
-                                
-        
-        
-        <name>xc</name>
-                                
-        
-        
-        <description/>
-                                
-        
-        
+    <project hash="-1349287">
+        <id>1</id>
+        <name>Alpha</name>
+        <description>Progetto Alpha di test</description>
         <status>COMPLETE</status>
-                                
-        
-        
         <tasks>
-                                    
-            
-            <task hash="1528713886">
-                                                
-                
-                <id>2</id>
-                                                
-                
-                <name>sadad</name>
-                                                
-                
-                <description/>
-                                                
-                
+            <task hash="72147">
+                <id>1</id>
+                <name>TaskA1</name>
+                <description>Prima task</description>
                 <status>COMPLETE</status>
-                                                
-                
-                <startTime>2025-12-16T18:53:15.393177900</startTime>
-                                                
-                
-                <endTime>2025-12-16T18:53:17.167667300</endTime>
-                                                
-                
-                <estimatedDuration>0</estimatedDuration>
-                                                
-                
-                <realDuration>0</realDuration>
-                                            
-            
+                <startTime>2025-12-16T08:00</startTime>
+                <endTime>2025-12-16T10:00</endTime>
+                <estimatedDuration>2</estimatedDuration>
+                <realDuration>2</realDuration>
             </task>
-                                
-        
+            <task hash="143123">
+                <id>2</id>
+                <name>TaskA2</name>
+                <description>Seconda task</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T10:30</startTime>
+                <endTime>2025-12-16T11:30</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
         </tasks>
-                            
-    
-    
     </project>
-            
 
+    <project hash="2486829">
+        <id>2</id>
+        <name>Beta</name>
+        <description>Progetto Beta incompleto</description>
+        <status>IN_PROGRESS</status>
+        <tasks>
+            <task hash="83742">
+                <id>1</id>
+                <name>TaskB1</name>
+                <description>Task completa</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T09:00</startTime>
+                <endTime>2025-12-16T09:30</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+            <task hash="627191">
+                <id>2</id>
+                <name>TaskB2</name>
+                <description>Task in progress</description>
+                <status>IN_PROGRESS</status>
+                <startTime>2025-12-16T10:00</startTime>
+                <endTime/>
+                <estimatedDuration>2</estimatedDuration>
+                <realDuration>-1</realDuration>
+            </task>
+        </tasks>
+    </project>
+
+    <project hash="-847293">
+        <id>3</id>
+        <name>Gamma</name>
+        <description>Progetto Gamma completo con più task</description>
+        <status>COMPLETE</status>
+        <tasks>
+            <task hash="12345">
+                <id>1</id>
+                <name>TaskG1</name>
+                <description>Task 1</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T08:00</startTime>
+                <endTime>2025-12-16T09:00</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+            <task hash="23456">
+                <id>2</id>
+                <name>TaskG2</name>
+                <description>Task 2</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T09:30</startTime>
+                <endTime>2025-12-16T10:30</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+            <task hash="34567">
+                <id>3</id>
+                <name>TaskG3</name>
+                <description>Task 3</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T11:00</startTime>
+                <endTime>2025-12-16T12:00</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+        </tasks>
+    </project>
+
+    <project hash="4928371">
+        <id>4</id>
+        <name>Delta</name>
+        <description>Progetto Delta incompleto</description>
+        <status>IN_PROGRESS</status>
+        <tasks>
+            <task hash="11111">
+                <id>1</id>
+                <name>TaskD1</name>
+                <description>Task 1 in progress</description>
+                <status>IN_PROGRESS</status>
+                <startTime>2025-12-16T08:00</startTime>
+                <endTime/>
+                <estimatedDuration>2</estimatedDuration>
+                <realDuration>-1</realDuration>
+            </task>
+            <task hash="22222">
+                <id>2</id>
+                <name>TaskD2</name>
+                <description>Task completata</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T10:00</startTime>
+                <endTime>2025-12-16T11:00</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+        </tasks>
+    </project>
+
+    <project hash="-928374">
+        <id>5</id>
+        <name>Epsilon</name>
+        <description>Progetto Epsilon completo</description>
+        <status>COMPLETE</status>
+        <tasks>
+            <task hash="77777">
+                <id>1</id>
+                <name>TaskE1</name>
+                <description>Task unica</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T08:00</startTime>
+                <endTime>2025-12-16T09:00</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+        </tasks>
+    </project>
+
+    <project hash="4839201">
+        <id>6</id>
+        <name>Zeta</name>
+        <description>Progetto Zeta con task varie</description>
+        <status>IN_PROGRESS</status>
+        <tasks>
+            <task hash="33333">
+                <id>1</id>
+                <name>TaskZ1</name>
+                <description>Task 1</description>
+                <status>IN_PROGRESS</status>
+                <startTime>2025-12-16T08:00</startTime>
+                <endTime/>
+                <estimatedDuration>3</estimatedDuration>
+                <realDuration>-1</realDuration>
+            </task>
+            <task hash="44444">
+                <id>2</id>
+                <name>TaskZ2</name>
+                <description>Task 2 completata</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T09:00</startTime>
+                <endTime>2025-12-16T10:00</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+            <task hash="55555">
+                <id>3</id>
+                <name>TaskZ3</name>
+                <description>Task 3 in progress</description>
+                <status>IN_PROGRESS</status>
+                <startTime>2025-12-16T10:30</startTime>
+                <endTime/>
+                <estimatedDuration>2</estimatedDuration>
+                <realDuration>-1</realDuration>
+            </task>
+        </tasks>
+    </project>
+
+    <project hash="-672839">
+        <id>7</id>
+        <name>Eta</name>
+        <description>Progetto Eta completo</description>
+        <status>COMPLETE</status>
+        <tasks>
+            <task hash="88888">
+                <id>1</id>
+                <name>TaskEta1</name>
+                <description>Task unica</description>
+                <status>COMPLETE</status>
+                <startTime>2025-12-16T08:00</startTime>
+                <endTime>2025-12-16T09:00</endTime>
+                <estimatedDuration>1</estimatedDuration>
+                <realDuration>1</realDuration>
+            </task>
+        </tasks>
+    </project>
 
 </projects>
