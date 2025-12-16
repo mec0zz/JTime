@@ -64,10 +64,18 @@ public class Project {
     public void addTask(Task task){ this.tasks.add(task); }
 
     /**
-     * Rimuove una task dalla lista delle task del progetto
+     * Restituisce la task richiesta
+     *
+     * @param hash l'hashcode della task da restituire
+     * @return Task la task richiesta
      */
-    public void removeTask(){
-        //TODO implementare
+    public Task getTask(int hash){
+        for(Task t:this.tasks){
+            if(t.hashCode()==hash){
+                return t;
+            }
+        }
+        return null;
     }
 
     /**

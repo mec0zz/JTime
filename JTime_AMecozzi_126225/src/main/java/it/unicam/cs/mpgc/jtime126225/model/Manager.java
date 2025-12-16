@@ -55,7 +55,11 @@ public class Manager {
     public boolean closeProject(int hash){
         for(Project p:this.projects){
             if(p.hashCode()==hash){
-                return p.completeProject();
+                boolean complete=p.completeProject();
+                if(complete){
+                    persistency.updateProject(p);
+                }
+                return complete;
             }
         }
         return false;
@@ -138,6 +142,7 @@ public class Manager {
         for(Project p:this.projects){
             if(p.hashCode()==projHashCode){
                 p.completeTask(taskHashCode);
+                persistency.updateTaskInProject(p.getTask(taskHashCode),p);
             }
         }
     }

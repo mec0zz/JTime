@@ -92,12 +92,63 @@ public class XmlPersistency implements Persistency {
 
     @Override
     public void updateProject(Project project) {
-        //TODO implementare
+        try{
+            Document doc=getDocument();
+            NodeList projects=doc.getElementsByTagName("project");
+
+            for(int i=0;i<projects.getLength();i++){
+                Element projectEl=(Element)projects.item(i);
+                if(Integer.parseInt(projectEl.getAttribute("hash"))==project.hashCode()){
+                    projectEl.getElementsByTagName("id").item(0).setTextContent(String.valueOf(project.getId()));
+                    projectEl.getElementsByTagName("name").item(0).setTextContent(project.getName());
+                    projectEl.getElementsByTagName("description").item(0).setTextContent(project.getDescription());
+                    projectEl.getElementsByTagName("status").item(0).setTextContent(project.getStatus().name());
+                    break;
+                }
+            }
+            writeDocument(doc);
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void updateTaskInProject(Task task, Project project) {
-        //TODO implementare
+        try{
+            Document doc=getDocument();
+            NodeList projects=doc.getElementsByTagName("project");
+
+            for(int i=0;i<projects.getLength();i++){
+                Element projectEl=(Element)projects.item(i);
+                if(Integer.parseInt(projectEl.getAttribute("hash"))==project.hashCode()){
+                    Element tasksEl=(Element) projectEl.getElementsByTagName("tasks").item(0);
+                    NodeList taskNodes=tasksEl.getChildNodes();
+                    for(int j=0;j<taskNodes.getLength();j++){
+                        if(taskNodes.item(j) instanceof Element taskEl){
+                            Element taskElement=(Element) taskNodes.item(j);
+                            if(Integer.parseInt(taskElement.getAttribute("hash"))==task.hashCode()){
+
+                                taskElement.getElementsByTagName("id").item(0).setTextContent(String.valueOf(task.getId()));
+                                taskElement.getElementsByTagName("name").item(0).setTextContent(task.getName());
+                                taskElement.getElementsByTagName("description").item(0).setTextContent(task.getDescription());
+                                taskElement.getElementsByTagName("status").item(0).setTextContent(task.getStatus().name());
+                                taskElement.getElementsByTagName("startTime").item(0).setTextContent(task.getStartTime().toString());
+                                taskElement.getElementsByTagName("endTime").item(0).setTextContent(task.getEndTime().toString());
+                                taskElement.getElementsByTagName("estimatedDuration").item(0).setTextContent(String.valueOf(task.getEstimatedDuration()));
+                                taskElement.getElementsByTagName("realDuration").item(0).setTextContent(String.valueOf(task.getRealDuration()));
+
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+            writeDocument(doc);
+            //TODO implementare
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -155,7 +206,6 @@ public class XmlPersistency implements Persistency {
         }catch(Exception e){
             e.printStackTrace();
         }
-        //TODO implementare
         return projects;
     }
 
