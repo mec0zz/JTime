@@ -94,7 +94,7 @@ public class ProjectController {
     @FXML
     public void goToHome() {
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/home.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/screensFXML/home.fxml"));
             Stage stage= (Stage) homeButton.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -124,7 +124,7 @@ public class ProjectController {
     @FXML
     public void goToAdderTask() {
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/adderTask.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/screensFXML/adderTask.fxml"));
 
             Parent root = loader.load();
 
@@ -144,7 +144,7 @@ public class ProjectController {
 
     public void goToTask(Task task, Project project){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/task.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/screensFXML/task.fxml"));
 
             Parent root=loader.load();
 

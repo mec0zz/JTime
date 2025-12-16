@@ -79,7 +79,7 @@ public class AddTaskController {
     @FXML
     public void goToProject() {
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/project.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/screensFXML/project.fxml"));
 
             Parent root = loader.load();
 

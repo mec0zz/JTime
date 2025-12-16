@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.mpgc.jtime126225.controller.ProjectController">
+    <children>
+        <TableView fx:id="listTasks" layoutX="12.0" layoutY="150.0" prefHeight="200.0" prefWidth="577.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="39.20001220703125" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="84.800048828125" text="Nome" />
+                <TableColumn fx:id="statusColumn" prefWidth="107.199951171875" text="Status" />
+                <TableColumn fx:id="startColumn" prefWidth="109.5999755859375" text="Data di inizio" />
+                <TableColumn fx:id="endColumn" prefWidth="104.79998779296875" text="Data di fine" />
+                <TableColumn fx:id="estimatedColumn" prefWidth="131.199951171875" text="Durata stimata" />
+            </columns>
+        </TableView>
+        <Button fx:id="homeButton" layoutX="484.0" layoutY="361.0" mnemonicParsing="false" onAction="#goToHome" text="Torna alla home" />
+        <Button fx:id="addTaskButton" layoutX="497.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToAdderTask" text="Aggiungi task" />
+        <Label fx:id="completedLabel" layoutX="7.0" layoutY="67.0" style="-fx-text-fill: green;" text="Task completate:" />
+        <Label fx:id="notCompletedLabel" layoutX="8.0" layoutY="87.0" style="-fx-text-fill: red;" text="Task non completate:" />
+        <Label fx:id="totalLabel" layoutX="9.0" layoutY="123.0" style="-fx-font-weight: bold;" text="Task totali:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="completeButton" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#completeProject" style="-fx-font-weight: bold;" text="Completa progetto" />
+        <Label fx:id="warningLabel" layoutX="209.0" layoutY="18.0" style="-fx-text-fill: green;" text="Progetto completato con successo!" />
+        <Label fx:id="estimatedLabel" layoutX="395.0" layoutY="67.0" text="Durata stimata:" />
+        <Label fx:id="realLabel" layoutX="395.0" layoutY="87.0" text="Durata effettiva:" />
+    </children>
+</Pane>

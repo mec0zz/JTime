@@ -63,7 +63,7 @@ public class AddProjectController {
     @FXML
     public void goToHome() {
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/home.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/screensFXML/home.fxml"));
             Stage stage= (Stage) homeButton.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);

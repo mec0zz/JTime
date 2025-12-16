@@ -70,7 +70,7 @@ public class HomeController {
     @FXML
     public void goToAdder() {
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/adderProject.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/screensFXML/adderProject.fxml"));
             Stage stage = (Stage)listProjects.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -84,7 +84,7 @@ public class HomeController {
 
     public void goToProject(Project selectedProject){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/project.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/screensFXML/project.fxml"));
 
             Parent root = loader.load();
 

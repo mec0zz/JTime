@@ -1,7 +1,6 @@
 package it.unicam.cs.mpgc.jtime126225.controller;
 
 import it.unicam.cs.mpgc.jtime126225.model.*;
-import it.unicam.cs.mpgc.jtime126225.persistency.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -71,7 +70,7 @@ public class TaskController {
     @FXML
     public void goToProject() {
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/project.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/screensFXML/project.fxml"));
 
             Parent root = loader.load();
 

@@ -21,7 +21,7 @@ public class XmlPersistency implements Persistency {
     private String xmlFile;
 
     public XmlPersistency() {
-        this.xmlFile = "src/main/java/it/unicam/cs/mpgc/jtime126225/persistencyProjects.xml";
+        this.xmlFile = "src/main/resources/persistencyProjects.xml";
     }
 
     @Override

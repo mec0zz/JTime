@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:controller="it.unicam.cs.mpgc.jtime126225.controller.AddTaskController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="191.0" layoutY="14.0" style="-fx-font-weight: bold;" text="Aggiungi task">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="117.0" text="Nome della task*" />
+      <Label layoutX="13.0" layoutY="192.0" text="Descrizione" />
+      <TextArea fx:id="descArea" layoutX="12.0" layoutY="210.0" prefHeight="125.0" prefWidth="576.0" promptText="Inserisci descrizione..." />
+      <TextField fx:id="nameField" layoutX="137.0" layoutY="113.0" onKeyPressed="#controlKey" promptText="Nome..." />
+      <TextField fx:id="durationField" layoutX="137.0" layoutY="152.0" onKeyPressed="#controlKey" promptText="Durata..." />
+      <Label layoutX="14.0" layoutY="156.0" text="Durata stimata (ore)" />
+      <Label layoutX="473.0" layoutY="59.0" text="* = Campi obbligatori" />
+      <Button fx:id="createButton" layoutX="379.0" layoutY="349.0" mnemonicParsing="false" onAction="#createTask" style="-fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: green;" text="Aggiungi task" />
+      <Button fx:id="projectButton" layoutX="137.0" layoutY="349.0" mnemonicParsing="false" onAction="#goToProject" style="-fx-text-fill: white; -fx-background-color: red;" text="Torna al progetto" />
+      <Label layoutX="14.0" layoutY="79.0" text="ID (numero)*" />
+      <TextField fx:id="idField" layoutX="137.0" layoutY="75.0" onKeyPressed="#controlKey" promptText="1..." />
+      <Label fx:id="warningLabel" layoutX="309.0" layoutY="100.0" style="-fx-text-fill: red;" text="Nome ed ID sono obbligatori" />
+   </children>
+</Pane>
