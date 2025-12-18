@@ -28,7 +28,6 @@
             </task>
         </tasks>
     </project>
-
     <project hash="2486829">
         <id>2</id>
         <name>Beta</name>
@@ -57,7 +56,6 @@
             </task>
         </tasks>
     </project>
-
     <project hash="-847293">
         <id>3</id>
         <name>Gamma</name>
@@ -96,7 +94,6 @@
             </task>
         </tasks>
     </project>
-
     <project hash="4928371">
         <id>4</id>
         <name>Delta</name>
@@ -125,7 +122,6 @@
             </task>
         </tasks>
     </project>
-
     <project hash="-928374">
         <id>5</id>
         <name>Epsilon</name>
@@ -144,7 +140,6 @@
             </task>
         </tasks>
     </project>
-
     <project hash="4839201">
         <id>6</id>
         <name>Zeta</name>
@@ -183,7 +178,6 @@
             </task>
         </tasks>
     </project>
-
     <project hash="-672839">
         <id>7</id>
         <name>Eta</name>
@@ -202,5 +196,11 @@
             </task>
         </tasks>
     </project>
-
+    <project hash="-1104067952">
+        <id>10</id>
+        <name>Prova</name>
+        <description/>
+        <status>IN_PROGRESS</status>
+        <tasks/>
+    </project>
 </projects>

@@ -170,6 +170,36 @@ public class Project {
     }
 
     /**
+     * Restituisce la durata stimata del progetto
+     * tramite le sue task
+     *
+     * @return long la durata stimata
+     */
+    public long getEstimatedTime(){
+        long estimatedTime=0;
+        for(Task task:tasks){
+            estimatedTime += task.getEstimatedDuration();
+        }
+        return estimatedTime;
+    }
+
+    /**
+     * Restituisce la durata effettiva del progetto
+     * tramite le sue task
+     *
+     * @return long la durata effettiva
+     */
+    public long getRealTime(){
+        long realTime=0;
+        if(this.isComplete()){
+            for(Task task:tasks){
+                realTime += task.getRealDuration();
+            }
+        }
+        return realTime;
+    }
+
+    /**
      * Metodo per calcolare l'hashcode del progetto, utilizzato
      * per riconoscere i progetti
      */

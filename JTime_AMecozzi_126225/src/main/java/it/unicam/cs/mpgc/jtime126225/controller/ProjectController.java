@@ -52,6 +52,9 @@ public class ProjectController {
         this.manager=Manager.getManager();
 
         warningLabel.setText("");
+        estimatedLabel.setText(estimatedLabel.getText()+" "+
+                ((project.getEstimatedTime()==0)?"-":String.valueOf(project.getEstimatedTime()))
+                +" h");
 
         if(project.isComplete()){
             addTaskButton.setVisible(false);
@@ -60,6 +63,8 @@ public class ProjectController {
             completeButton.setManaged(false);
             warningLabel.setStyle("-fx-text-fill: green;");
             warningLabel.setText("Progetto completato");
+            realLabel.setText(realLabel.getText()+" "+
+                    String.valueOf(project.getRealTime())+" h");
         }
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -88,7 +93,7 @@ public class ProjectController {
         notCompletedLabel.setText(notCompletedLabel.getText()+" "+project.notCompletedTasks()+
                 "/"+project.totalTasks());
         totalLabel.setText(totalLabel.getText()+" "+project.totalTasks());
-        //TODO implementare
+
     }
 
     @FXML
@@ -115,6 +120,8 @@ public class ProjectController {
             completeButton.setManaged(false);
             addTaskButton.setVisible(false);
             addTaskButton.setManaged(false);
+            realLabel.setText(realLabel.getText()+" "+
+                    String.valueOf(project.getRealTime())+" h");
         }else{
             warningLabel.setStyle("-fx-text-fill: red;");
             warningLabel.setText("Non è possibile completare il progetto");
